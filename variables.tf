@@ -13,6 +13,10 @@ variable "name" {
   type        = "string"
 }
 
+variable "legacy_bucket" {
+  description = "Bucket name (legacy support only, not recommended.)"
+}
+
 variable "delimiter" {
   type        = "string"
   default     = "-"

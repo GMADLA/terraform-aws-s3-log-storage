@@ -14,6 +14,7 @@
 | lifecycle_rule_enabled | Enable lifecycle events on this bucket | string | `true` | no |
 | lifecycle_tags | Tags filter. Used to manage object lifecycle events. | map | `<map>` | no |
 | name | Name  (e.g. `app` or `db`) | string | - | yes |
+| legacy_bucket | Bucket name  (Not recommended, legacy support only) | string | `` | no |
 | namespace | Namespace (e.g. `cp` or `cloudposse`) | string | - | yes |
 | noncurrent_version_expiration_days | Specifies when noncurrent object versions expire. | string | `90` | no |
 | noncurrent_version_transition_days | Specifies when noncurrent object versions transitions | string | `30` | no |

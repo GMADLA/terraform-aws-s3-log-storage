@@ -11,7 +11,7 @@ module "default_label" {
 
 resource "aws_s3_bucket" "default" {
   count         = "${var.enabled == "true" ? 1 : 0}"
-  bucket        = "${module.default_label.id}"
+  bucket        = "${var.legacy_bucket == "" ? module.default_label.id : var.legacy_bucket}"
   acl           = "${var.acl}"
   region        = "${var.region}"
   force_destroy = "${var.force_destroy}"
@@ -22,7 +22,7 @@ resource "aws_s3_bucket" "default" {
   }
 
   lifecycle_rule {
-    id      = "${module.default_label.id}"
+    id      = "${var.legacy_bucket == "" ? module.default_label.id : var.legacy_bucket}"
     enabled = "${var.lifecycle_rule_enabled}"
 
     prefix = "${var.lifecycle_prefix}"
